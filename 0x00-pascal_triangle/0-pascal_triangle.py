@@ -1,3 +1,6 @@
+#!/usr/bin/python3
+"""Module contains function to make a pascal triangle"""
+
 def pascal_triangle(n):
     """Creates a pascal triangle"""
     if n <= 0:
