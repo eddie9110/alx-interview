@@ -25,3 +25,4 @@ def minOperations(n: int) -> int:
         return 0
 
     return no_of_times
+
