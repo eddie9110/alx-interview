@@ -1,5 +1,11 @@
+#!/usr/bin/python3
+"""
+Module contains minOperations function
+"""
+
+
 def minOperations(n: int) -> int:
-    """method that calculates the fewest number of operations
+    """function calculates the fewest number of operations
     needed to result in exactly n H characters in the file."""
     no_of_times = 0
 
