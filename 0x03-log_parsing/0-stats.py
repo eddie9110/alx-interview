@@ -34,5 +34,5 @@ try:
                 print_result(status_codes, file_size)
                 count_ = 0
 
-except KeyboardInterrupt:
+finally:
     print_result(status_codes, file_size)
