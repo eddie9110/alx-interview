@@ -26,7 +26,7 @@ try:
             count_ += 1
             if count_ <= 10:
                 file_size += int(parsed_input[0])
-                code = parsed_input[1]
+                status_code = parsed_input[1]
                 if (status_code in status_codes.keys()):
                     status_codes[status_code] += 1
 
