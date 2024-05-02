@@ -1,8 +1,9 @@
 #!/usr/bin/python3
 """
-determine the fewest number of coins needed to 
+determine the fewest number of coins needed to
 meet a given amount of change
 """
+
 
 def makeChange(coins, total):
     if total == 0:
@@ -18,4 +19,3 @@ def makeChange(coins, total):
             balance = balance % coin
     change = change if balance == 0 else -1
     return change
-
