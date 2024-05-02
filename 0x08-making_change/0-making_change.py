@@ -7,7 +7,7 @@ meet a given amount of change
 
 def makeChange(coins, total):
     """making change function"""
-    if total == 0:
+    if total <= 0:
         return 0
     if len(coins) == 0 or coins is None:
         return -1
