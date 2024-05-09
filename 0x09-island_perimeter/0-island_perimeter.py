@@ -10,17 +10,18 @@ def island_perimeter(grid):
     Function that calculates the perimeter of Island i.e grid
     Returns perimeter
     """
-    perimeter = 0
 
+    perimeter = 0
+    rows = 0
+    cols = 0
     for x in range(len(grid)):
-        for a in range(len(grid[x])):
+        for a in range(len(grid[0])):
             if grid[x][a] == 1:
-                if grid[x][a - 1] == 0 or a == 0:
-                    perimeter += 1
-                if grid[x - 1][a] == 0 or x == 0:
-                    perimeter += 1
-                if grid[x][a + 1] == 0 or a == len(grid[x]) - 1:
-                    perimeter += 1
-                if grid[x + 1][a] == 0 or x == len(grid) - 1:
-                    perimeter += 1
+                cols += 2
+                if a > 0 and grid[x][a - 1] == 1:
+                    rows += 1
+                if x > 0 and grid[x - 1][a] == 1:
+                    rows += 1
+    perimeter = cols * 2 - rows * 2
+
     return perimeter
