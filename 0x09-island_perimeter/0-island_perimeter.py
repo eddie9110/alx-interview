@@ -12,9 +12,6 @@ def island_perimeter(grid):
     """
     perimeter = 0
 
-    if not grid:
-        return perimeter
-
     for a, b in enumerate(grid):
         for i, j in enumerate(b):
             if j == 1:
