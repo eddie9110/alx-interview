@@ -27,7 +27,7 @@ def isWinner(x, nums):
         if state[k]:
             rounds += 1
         state[k] = rounds
-    
+
     for j in nums:
         Maria += state[j] % 2 == 1
     if Maria * 2 > len(nums):
