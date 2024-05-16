@@ -14,6 +14,8 @@ def isWinner(x, nums):
     """
     rounds = 0
     Maria = 0
+    if x < 1 or not nums:
+        return None
     nums2 = max(nums)
     state = [True for _ in range(max(nums2 + 1, 2))]
     for x in range(2, int(pow(nums2, 0.5)) + 1):
