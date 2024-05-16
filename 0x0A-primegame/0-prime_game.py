@@ -9,12 +9,13 @@ def is_prime(num):
             return False
     return True
 
+
 def isWinner(x, nums):
     """
     Function that checks the winner
     args:
         x = number of rounds and nums is an array of n
-    Return: 
+    Return:
         name of the player that won the most rounds
         If winner cannot be determined, return None
         Assume n and x will not be larger than 10000
@@ -41,7 +42,7 @@ def isWinner(x, nums):
             Maria += 1
         else:
             Ben += 1
-    #checking the winner
+    # checking the winner
     if Maria > Ben:
         return "Maria"
     if Maria == Ben:
