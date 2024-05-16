@@ -2,14 +2,6 @@
 """ prime game module"""
 
 
-def is_prime(num):
-    """ function checks if a number is a prime number"""
-    for i in range(2, num):
-        if num % i == 0:
-            return False
-    return True
-
-
 def isWinner(x, nums):
     """
     Function that checks the winner
@@ -20,31 +12,26 @@ def isWinner(x, nums):
         If winner cannot be determined, return None
         Assume n and x will not be larger than 10000
     """
-    Maria = Ben = 0
-    nums.sort()
-    for check in range(x):
-        round = 0
-        list_of_nums = list(range(1, nums[check] + 1))
+    rounds = 0
+    Maria = 0
+    nums2 = max(nums)
+    state = [True for _ in range(max(nums2 + 1, 2))]
+    for x in range(2, int(pow(nums2, 0.5)) + 1):
+        if not state[x]:
+            continue
+        for i in range(x * x, nums2 + 1, x):
+            state[i] = False
+    state[0] = state[1] = False
 
-        while True:
-            state = False
-            for i, x in enumerate(list_of_nums):
-                if x > 1 and is_prime(x):
-                    for j in range(len(list_of_nums)):
-                        if list_of_nums[j] % x == 0:
-                            list_of_nums[j] = 0
-                    state = True
-                    round += 1
-                    break
-            if state is False:
-                break
-        if round % 2 != 0:
-            Maria += 1
-        else:
-            Ben += 1
-    # checking the winner
-    if Maria > Ben:
+    for k in range(len(state)):
+        if state[k]:
+            rounds += 1
+        state[k] = rounds
+    
+    for j in nums:
+        Maria += state[j] % 2 == 1
+    if Maria * 2 > len(nums):
         return "Maria"
-    if Maria == Ben:
+    if Maria * 2 == len(nums):
         return None
     return "Ben"
